@@ -50,7 +50,7 @@
         Cambia el número de WhatsApp en el JavaScript del final.
 
         Ejemplo:
-        const WHATSAPP_NUMBER = "51987654321";
+        const WHATSAPP_NUMBER = "51984089927";
 
         Formato:
         código país + número
