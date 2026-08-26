@@ -5669,7 +5669,15 @@ const lead = {
 
 
                 whatsappMessage +=
-                    "%0AQuedo atento(a) a la orientación.";
+    "*Cotización:* S/ " +
+    price.toLocaleString("es-PE", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }) +
+    "%0A%0A";
+
+whatsappMessage +=
+    "Quedo atento(a) a la orientación.";
 
 
                 /*
