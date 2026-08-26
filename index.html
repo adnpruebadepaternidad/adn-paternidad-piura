@@ -8,28 +8,28 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Prueba de Paternidad en Piura | ADN con Confidencialidad</title>
+    <title>Pruebas de Paternidad por ADN en Piura | ADN Piura</title>
 
     <meta
         name="description"
-        content="Pruebas de paternidad por ADN en Piura. Atención confidencial, orientación personalizada y diferentes modalidades según tu necesidad."
+        content="Pruebas de paternidad por ADN en Piura. ADN Informativo y ADN Codificado / Discreto. Atención privada y orientación personalizada."
     >
 
     <meta
         name="keywords"
-        content="prueba de paternidad Piura, prueba ADN Piura, ADN paternidad Piura, examen de paternidad Piura, prueba genética Piura"
+        content="prueba de paternidad Piura, ADN Piura, prueba ADN Piura, paternidad por ADN, ADN informativo, ADN codificado discreto"
     >
 
-    <meta name="author" content="Pruebas de Paternidad Piura">
+    <meta name="author" content="ADN Piura">
 
     <meta
         property="og:title"
-        content="Prueba de Paternidad por ADN en Piura"
+        content="Pruebas de Paternidad por ADN en Piura | ADN Piura"
     >
 
     <meta
         property="og:description"
-        content="Conoce nuestras modalidades de prueba de ADN y recibe orientación confidencial."
+        content="ADN Informativo y ADN Codificado / Discreto. Solicita orientación privada en Piura."
     >
 
     <meta
@@ -66,14 +66,14 @@
         ========================================================= */
 
         :root {
-            --primary: #0b6b68;
-            --primary-dark: #07504e;
-            --primary-light: #e8f7f5;
+            --primary: #0a7c78;
+            --primary-dark: #075b58;
+            --primary-light: #e7f8f6;
 
-            --secondary: #d9a441;
+            --secondary: #d6a33a;
             --secondary-light: #fff7e5;
 
-            --navy: #12343b;
+            --navy: #102f38;
             --text: #334155;
             --muted: #64748b;
 
@@ -1958,7 +1958,7 @@
                         <use href="#icon-shield"></use>
                     </svg>
 
-                    Atención confidencial
+                    Atención privada
                 </span>
 
                 <span class="topbar-item">
@@ -2098,17 +2098,17 @@
 
                         <span class="eyebrow-dot"></span>
 
-                        PRUEBA DE PATERNIDAD POR ADN EN PIURA
+                        ADN PIURA • ATENCIÓN PRIVADA
 
                     </div>
 
 
                     <h1>
 
-                        Respuestas que pueden darte
+                        Pruebas de paternidad por ADN en Piura,
 
                         <span>
-                            tranquilidad.
+                            con discreción y orientación.
                         </span>
 
                     </h1>
@@ -2116,9 +2116,9 @@
 
                     <p class="hero-description">
 
-                        Realiza una prueba de paternidad por ADN
-                        con orientación personalizada, atención
-                        discreta y alternativas según tu necesidad.
+                        Conoce la modalidad que puede corresponder a tu caso y recibe
+                        orientación personalizada antes de coordinar tu prueba.
+                        Atención privada para ADN Informativo y ADN Codificado / Discreto.
 
                     </p>
 
@@ -2408,9 +2408,8 @@
 
                     <p class="section-description">
 
-                        No todas las situaciones requieren la misma
-                        modalidad. Te ayudamos a identificar cuál
-                        corresponde a tu caso.
+                        Trabajamos únicamente con dos modalidades de paternidad por ADN.
+                        Elige una para conocer sus características o solicita orientación.
 
                     </p>
 
@@ -3177,6 +3176,7 @@
                                 <select
                                     id="testType"
                                     name="testType"
+                                    required
                                 >
 
                                     <option value="">
@@ -3191,13 +3191,6 @@
                                         ADN Codificado / Discreto
                                     </option>
 
-                                    <option value="ADN para proceso legal">
-                                        ADN para proceso legal
-                                    </option>
-
-                                    <option value="No estoy seguro">
-                                        No estoy seguro
-                                    </option>
 
                                 </select>
 
@@ -3236,6 +3229,42 @@
                                     </option>
 
                                 </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="preferredTime">
+                                    ¿Cuándo prefieres que te contactemos?
+                                </label>
+
+                                <select
+                                    id="preferredTime"
+                                    name="preferredTime"
+                                >
+                                    <option value="">Seleccionar</option>
+                                    <option value="Mañana">Mañana</option>
+                                    <option value="Tarde">Tarde</option>
+                                    <option value="Noche">Noche</option>
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Correo electrónico <span class="optional">(opcional)</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="tucorreo@ejemplo.com"
+                                    autocomplete="email"
+                                >
 
                             </div>
 
@@ -3297,9 +3326,8 @@
 
                         <div class="form-note">
 
-                            No envíes fotografías de documentos,
-                            resultados médicos ni información sensible
-                            por este formulario.
+                            No envíes fotografías de documentos, resultados ni información sensible.
+                            Para la orientación inicial solo necesitamos estos datos básicos.
 
                         </div>
 
@@ -3833,7 +3861,14 @@
             const WHATSAPP_NUMBER = "51987654321";
         */
 
-        const WHATSAPP_NUMBER = "51999999999";
+        const WHATSAPP_NUMBER = "51999999999"; // REEMPLAZA por tu número real
+
+        // FUTURO: pega aquí la URL de tu Web App de Google Apps Script.
+        // Mientras esté vacío, la página seguirá funcionando solo con WhatsApp.
+        const GOOGLE_SCRIPT_URL = "";
+
+        // Identifica de dónde llegó el registro.
+        const LEAD_SOURCE = "web";
 
 
         /*
@@ -3932,7 +3967,7 @@
 
         patientForm.addEventListener(
             "submit",
-            function(event) {
+            async function(event) {
 
                 event.preventDefault();
 
@@ -3975,6 +4010,51 @@
                         .getElementById("message")
                         .value
                         .trim();
+
+                const preferredTime =
+                    document
+                        .getElementById("preferredTime")
+                        .value;
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+                /*
+                    Datos preparados para la futura automatización
+                    con Google Sheets + Apps Script.
+                */
+                const lead = {
+                    leadId: (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString()),
+                    timestamp: new Date().toISOString(),
+                    source: LEAD_SOURCE,
+                    name,
+                    phone,
+                    email,
+                    city,
+                    testType,
+                    participants,
+                    preferredTime,
+                    message,
+                    page: window.location.href
+                };
+
+                if (GOOGLE_SCRIPT_URL) {
+                    try {
+                        await fetch(GOOGLE_SCRIPT_URL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            headers: {
+                                "Content-Type": "text/plain;charset=utf-8"
+                            },
+                            body: JSON.stringify(lead)
+                        });
+                    } catch (error) {
+                        console.warn("No se pudo enviar el registro a Apps Script:", error);
+                    }
+                }
 
 
                 /*
@@ -4027,6 +4107,24 @@
 
                 }
 
+                if (preferredTime) {
+
+                    whatsappMessage +=
+                        "*Horario preferido:* " +
+                        preferredTime +
+                        "%0A";
+
+                }
+
+                if (email) {
+
+                    whatsappMessage +=
+                        "*Correo:* " +
+                        email +
+                        "%0A";
+
+                }
+
 
                 if (message) {
 
@@ -4057,11 +4155,22 @@
                     );
 
 
+                const submitButton = patientForm.querySelector("button[type=\"submit\"]");
+                submitButton.disabled = true;
+                submitButton.style.opacity = "0.75";
+                submitButton.innerHTML = "Abriendo WhatsApp…";
+
                 window.open(
                     url,
                     "_blank",
                     "noopener,noreferrer"
                 );
+
+                setTimeout(function() {
+                    submitButton.disabled = false;
+                    submitButton.style.opacity = "1";
+                    submitButton.innerHTML = '<svg class="icon"><use href="#icon-whatsapp"></use></svg> Solicitar información por WhatsApp';
+                }, 1500);
 
             }
         );
@@ -4205,7 +4314,22 @@
         );
 
 
-    </script>
+    
+
+        /* =========================================================
+           PRESELECCIONAR MODALIDAD DESDE LAS TARJETAS
+        ========================================================== */
+        document.querySelectorAll(".service-link").forEach(function(link) {
+            link.addEventListener("click", function() {
+                const text = link.closest(".service-card").querySelector("h3").textContent.trim();
+                const select = document.getElementById("testType");
+                if (select) {
+                    select.value = text;
+                }
+            });
+        });
+
+</script>
 
 </body>
 </html>
