@@ -5457,6 +5457,100 @@
         });
 
 </script>
+<script>
 
+/* =========================================================
+   COTIZACIÓN DE PRUEBAS DE ADN
+========================================================= */
+
+function actualizarCotizacion(tipoPrueba) {
+
+    const quoteBox =
+        document.getElementById("quoteBox");
+
+    const quotePlaceholder =
+        document.getElementById("quotePlaceholder");
+
+    const quoteContent =
+        document.getElementById("quoteContent");
+
+    const quoteTest =
+        document.getElementById("quoteTest");
+
+    const quotePrice =
+        document.getElementById("quotePrice");
+
+
+    /* ==============================================
+       PRECIOS
+    ============================================== */
+
+    const precios = {
+
+        "ADN Informativo": 900,
+
+        "ADN Codificado / Discreto": 1000
+
+    };
+
+
+    /* ==============================================
+       SI NO HA SELECCIONADO UNA PRUEBA
+    ============================================== */
+
+    if (!tipoPrueba || !precios[tipoPrueba]) {
+
+        quotePlaceholder.style.display =
+            "block";
+
+        quoteContent.style.display =
+            "none";
+
+        quoteBox.classList.remove("active");
+
+        return;
+
+    }
+
+
+    /* ==============================================
+       OBTENER PRECIO
+    ============================================== */
+
+    const precio =
+        precios[tipoPrueba];
+
+
+    /* ==============================================
+       MOSTRAR COTIZACIÓN
+    ============================================== */
+
+    quoteTest.textContent =
+        tipoPrueba;
+
+
+    quotePrice.textContent =
+        precio.toLocaleString(
+            "es-PE",
+            {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }
+        );
+
+
+    quotePlaceholder.style.display =
+        "none";
+
+
+    quoteContent.style.display =
+        "block";
+
+
+    quoteBox.classList.add("active");
+
+}
+
+</script>
 </body>
 </html>
