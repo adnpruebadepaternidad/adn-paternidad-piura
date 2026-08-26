@@ -1041,17 +1041,15 @@
                 const comments = document.getElementById('comments').value.trim() || 'Sin comentarios adicionales';
 
                 // Texto formateado para WhatsApp
-                let msg = `*NUEVA CONSULTA - ADN PIURA*\n\n`;
-                msg += `👤 *Nombre:* ${name}\n`;
-                msg += `📱 *Teléfono:* ${phone}\n`;
-                msg += `📍 *Ciudad/Distrito:* ${city}\n`;
-                msg += `🧪 *Tipo de Prueba:* ${testType}\n`;
-                msg += `👥 *Participantes:* ${participants}\n`;
-                if(comments !== 'Sin comentarios adicionales') {
-                    msg += `💬 *Mensaje:* ${comments}\n`;
-                }
+                let mensaje = `*NUEVA CONSULTA - ADN PIURA*\n\n` +
+  `👤 *Nombre completo:* ${nombre}\n` +
+  `📱 *Celular:* ${telefono}\n` +
+  `📍 *Ciudad/Distrito:* ${ciudad}\n` +
+  `🧬 *Tipo de Prueba:* ${tipoPrueba}\n` +
+  `👥 *Participantes:* ${participantes}\n` +
+  `💬 *Mensaje:* ${mensajeUsuario}`;
 
-                const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+let urlWhatsApp = `https://wa.me/51984089927?text=${encodeURIComponent(mensaje)}`;
 
                 // Deshabilitar botón temporalmente
                 if (submitBtn) {
