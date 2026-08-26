@@ -5546,9 +5546,6 @@ const lead = {
     preferredTime:
         preferredTime,
 
-    price:
-        price,
-
     message:
         message,
 
@@ -5575,7 +5572,19 @@ const lead = {
                     }
                 }
 
+                // -------------------------------------------------------------
+// AGREGAR AQUÍ LAS SIGUIENTES LÍNEAS DEBAJO DE TU FETCH:
+// -------------------------------------------------------------
 
+// 1. Mostrar mensaje flotante al usuario
+alert("¡Solicitud enviada con éxito! Nos pondremos en contacto contigo a la brevedad.");
+
+// 2. Limpiar todos los campos del formulario de la pantalla
+const quoteForm = document.getElementById('quoteForm'); // Asegúrate de colocar el ID correcto de tu etiqueta <form>
+if (quoteForm) {
+    quoteForm.reset();
+}
+                
                 /*
                     Construimos un mensaje limpio
                     para el asesor.
