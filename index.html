@@ -5153,20 +5153,52 @@
                     Datos preparados para la futura automatización
                     con Google Sheets + Apps Script.
                 */
-                const lead = {
-                    leadId: (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString()),
-                    timestamp: new Date().toISOString(),
-                    source: LEAD_SOURCE,
-                    name,
-                    phone,
-                    email,
-                    city,
-                    testType,
-                    participants,
-                    preferredTime,
-                    message,
-                    page: window.location.href
-                };
+                const price = TEST_PRICES[testType] || 0;
+
+const lead = {
+
+    leadId:
+        crypto.randomUUID
+        ? crypto.randomUUID()
+        : Date.now().toString(),
+
+    timestamp:
+        new Date().toISOString(),
+
+    source:
+        LEAD_SOURCE,
+
+    name:
+        name,
+
+    phone:
+        phone,
+
+    email:
+        email,
+
+    city:
+        city,
+
+    testType:
+        testType,
+
+    participants:
+        participants,
+
+    preferredTime:
+        preferredTime,
+
+    price:
+        price,
+
+    message:
+        message,
+
+    page:
+        window.location.href
+
+};
 
                 if (GOOGLE_SCRIPT_URL) {
                     try {
