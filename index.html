@@ -368,7 +368,12 @@
            RESPONSIVE
         ========================================================= */
         @media (max-width: 850px) {
-            .topbar { display: none; }
+            .topbar {
+    display: block;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+}
             header { position: sticky; top: 0; z-index: 1100; background: rgba(7,47,73,.97) !important; backdrop-filter: blur(12px); }
             .navbar { min-height: 68px; height: 68px; }
             .mobile-menu-button { display: grid !important; place-items: center; width: 48px; height: 48px; border-radius: 12px; color: #fff !important; cursor: pointer; }
