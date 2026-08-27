@@ -469,7 +469,7 @@
             <a href="#inicio" class="logo" aria-label="Inicio">
                 <div class="logo-mark"><svg class="icon-lg"><use href="#icon-dna"></use></svg></div>
                 <div class="logo-text">
-                    <div class="logo-title">ADN Piura</div>
+                    <div class="logo-title">ADN PATERNIDAD PIURA</div>
                     <div class="logo-subtitle">Pruebas de Paternidad</div>
                 </div>
             </a>
@@ -494,7 +494,7 @@
         <section class="hero" id="inicio">
             <div class="container hero-grid">
                 <div class="hero-content fade-up">
-                    <div class="eyebrow"><span class="eyebrow-dot"></span> ADN PIURA • ATENCIÓN PRIVADA</div>
+                    <div class="eyebrow"><span class="eyebrow-dot"></span> ADN PATERNIDAD PIURA • ATENCIÓN PRIVADA</div>
                     <h1>Pruebas de paternidad por ADN en Piura, <span>con discreción y orientación.</span></h1>
                     <p class="hero-description">Conoce la modalidad que puede corresponder a tu caso y recibe orientación personalizada antes de coordinar tu prueba. Atención privada para ADN Informativo y ADN Codificado / Discreto.</p>
                     <div class="hero-actions">
@@ -979,7 +979,7 @@
         // 4. CONFIGURACIÓN ENLACES WHATSAPP DIRECTOS
         function setupWhatsAppLinks() {
             const links = document.querySelectorAll('.whatsapp-link');
-            const defaultMsg = encodeURIComponent("Hola ADN Piura, me gustaría recibir orientación privada sobre una prueba de ADN.");
+            const defaultMsg = encodeURIComponent("Hola ADN PATERNIDAD PIURA, me gustaría recibir orientación privada sobre una prueba de ADN.");
             const url = `https://wa.me/${984089927}?text=${defaultMsg}`;
 
             links.forEach(link => {
@@ -1007,13 +1007,13 @@
                 const comments = document.getElementById('comments').value.trim() || 'Sin comentarios adicionales';
 
                 // 2. Formato de mensaje corregido usando las variables correctas
-                let mensaje = `*NUEVA CONSULTA - ADN PIURA*\n\n` +
-                              `👤 *Nombre completo:* ${name}\n` +
-                              `📱 *Celular:* ${phone}\n` +
-                              `📍 *Ciudad/Distrito:* ${city}\n` +
-                              `🧬 *Tipo de Prueba:* ${testType}\n` +
-                              `👥 *Participantes:* ${participants}\n` +
-                              `💬 *Mensaje:* ${comments}`;
+                let mensaje = `*NUEVA CONSULTA - ADN PATERNIDAD PIURA*\n\n` +
+                              `*Nombre completo:* ${name}\n` +
+                              `*Celular:* ${phone}\n` +
+                              `*Ciudad/Distrito:* ${city}\n` +
+                              `*Tipo de Prueba:* ${testType}\n` +
+                              `*Participantes:* ${participants}\n` +
+                              `*Mensaje:* ${comments}`;
 
                 let urlWhatsApp = `https://wa.me/${984089927}?text=${encodeURIComponent(mensaje)}`;
 
