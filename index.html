@@ -922,11 +922,11 @@
         </a>
     </div>
 
-    <!-- SCRIPT JS PRINCIPAL -->
+    <!-- SCRIPT JS PRINCIPAL (CORREGIDO) -->
     <script>
         // CONFIGURACIÓN CENTRALIZADA
-        const WHATSAPP_NUMBER = "51984089927"; // Ajusta tu número aquí (código país + número)
-        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbymh6S3r2ev5QKlUb4HCMdhcQGp1-dCtU5DBxIZ1-p26J8K6VK0IeqTPbaxab7_I7yNKw/exec"; // Coloca aquí la URL del Web App de tu Google Apps Script si deseas guardar en Sheets
+        const WHATSAPP_NUMBER = "51984089927"; // Número corregido con código de país
+        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbymh6S3r2ev5QKlUb4HCMdhcQGp1-dCtU5DBxIZ1-p26J8K6VK0IeqTPbaxab7_I7yNKw/exec";
 
         document.addEventListener('DOMContentLoaded', () => {
             setupNavigation();
@@ -945,7 +945,6 @@
                     mainNav.classList.toggle('active');
                 });
 
-                // Cerrar menú al hacer click en un enlace
                 mainNav.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         mainNav.classList.remove('active');
@@ -962,43 +961,22 @@
                 if (questionBtn) {
                     questionBtn.addEventListener('click', () => {
                         const isActive = item.classList.contains('active');
-                        // Cerrar otros
                         faqItems.forEach(el => el.classList.remove('active'));
-                        // Alternar actual
                         if (!isActive) item.classList.add('active');
                     });
                 }
             });
         }
 
-        // 3. COTIZACIÓN DINÁMICA
-        function actualizarCotizacion(tipoPrueba) {
-            const quoteBox = document.getElementById('quoteBox');
-            const testName = document.getElementById('quoteTestName');
-            const priceVal = document.getElementById('quotePriceValue');
-            const descVal = document.getElementById('quoteDescription');
-
-            if (PRECIOS[tipoPrueba]) {
-                testName.textContent = tipoPrueba;
-                priceVal.textContent = PRECIOS[tipoPrueba].precio;
-                descVal.textContent = PRECIOS[tipoPrueba].desc;
-                quoteBox.style.display = "block";
-                quoteBox.classList.add('active');
-            } else {
-                quoteBox.style.display = "none";
-                quoteBox.classList.remove('active');
-            }
-        }
-
+        // 3. SELECCIÓN DE PRUEBA
         function seleccionarPrueba(tipo) {
             const select = document.getElementById('testType');
             if (select) {
                 select.value = tipo;
-                actualizarCotizacion(tipo);
             }
         }
 
-        // 4. CONFIGURACIÓN ENLACES WHATSAPP
+        // 4. CONFIGURACIÓN ENLACES WHATSAPP DIRECTOS
         function setupWhatsAppLinks() {
             const links = document.querySelectorAll('.whatsapp-link');
             const defaultMsg = encodeURIComponent("Hola ADN Piura, me gustaría recibir orientación privada sobre una prueba de ADN.");
@@ -1010,7 +988,7 @@
             });
         }
 
-        // 5. ENVÍO DE FORMULARIO (GAS + REDIRECCIÓN WHATSAPP)
+        // 5. ENVÍO DE FORMULARIO CORREGIDO
         function setupForm() {
             const form = document.getElementById('patientForm');
             const submitBtn = document.getElementById('submitBtn');
@@ -1020,6 +998,7 @@
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
+                // 1. Captura de variables
                 const name = document.getElementById('name').value.trim();
                 const phone = document.getElementById('phone').value.trim();
                 const city = document.getElementById('city').value.trim() || 'No especificada';
@@ -1027,16 +1006,16 @@
                 const participants = document.getElementById('participants').value || 'No especificado';
                 const comments = document.getElementById('comments').value.trim() || 'Sin comentarios adicionales';
 
-                // Texto formateado para WhatsApp
+                // 2. Formato de mensaje corregido usando las variables correctas
                 let mensaje = `*NUEVA CONSULTA - ADN PIURA*\n\n` +
-  `👤 *Nombre completo:* ${nombre}\n` +
-  `📱 *Celular:* ${telefono}\n` +
-  `📍 *Ciudad/Distrito:* ${ciudad}\n` +
-  `🧬 *Tipo de Prueba:* ${tipoPrueba}\n` +
-  `👥 *Participantes:* ${participantes}\n` +
-  `💬 *Mensaje:* ${mensajeUsuario}`;
+                              `👤 *Nombre completo:* ${name}\n` +
+                              `📱 *Celular:* ${phone}\n` +
+                              `📍 *Ciudad/Distrito:* ${city}\n` +
+                              `🧬 *Tipo de Prueba:* ${testType}\n` +
+                              `👥 *Participantes:* ${participants}\n` +
+                              `💬 *Mensaje:* ${comments}`;
 
-let urlWhatsApp = `https://wa.me/51984089927?text=${encodeURIComponent(mensaje)}`;
+                let urlWhatsApp = `https://wa.me/${984089927}?text=${encodeURIComponent(mensaje)}`;
 
                 // Deshabilitar botón temporalmente
                 if (submitBtn) {
@@ -1044,7 +1023,7 @@ let urlWhatsApp = `https://wa.me/51984089927?text=${encodeURIComponent(mensaje)}
                     submitBtn.innerText = "Procesando...";
                 }
 
-                // Enviar a Apps Script si la URL existe
+                // Enviar a Google Apps Script
                 if (APPS_SCRIPT_URL !== "") {
                     try {
                         const formData = new FormData(form);
@@ -1057,8 +1036,8 @@ let urlWhatsApp = `https://wa.me/51984089927?text=${encodeURIComponent(mensaje)}
                     }
                 }
 
-                // Abrir WhatsApp
-                window.open(waUrl, '_blank');
+                // Redirección a WhatsApp con la variable correcta (urlWhatsApp)
+                window.open(urlWhatsApp, '_blank');
 
                 // Resetear estado del botón y formulario
                 if (submitBtn) {
@@ -1066,7 +1045,6 @@ let urlWhatsApp = `https://wa.me/51984089927?text=${encodeURIComponent(mensaje)}
                     submitBtn.innerHTML = `Enviar y continuar por WhatsApp <svg class="icon-sm"><use href="#icon-arrow"></use></svg>`;
                 }
                 form.reset();
-                actualizarCotizacion("");
             });
         }
     </script>
