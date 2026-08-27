@@ -13,7 +13,7 @@
       "src": "og-image.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
-      "purpose": "any"
+      "purpose": "maskable"
     }
   ],
   "start_url": "./index.html",
