@@ -312,7 +312,7 @@
         }
         .quote-box::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: linear-gradient(180deg, #0d9488, #06b6d4); border-radius: 5px 0 0 5px; }
         .quote-label { display: flex; align-items: center; gap: 9px; margin-bottom: 8px; color: #0b6b68; font-size: 12px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; }
-        .quote-label-icon { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 9px; background: #d9f5f1; color: #0b827a; font-size: 15px; }
+        .quote-label-icon { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 99px; background: #d9f5f1; color: #0b827a; font-size: 15px; }
         .quote-test { margin-bottom: 4px; color: #073b56; font-size: 16px; font-weight: 750; }
         .quote-price { display: flex; align-items: baseline; gap: 7px; color: #073b56; font-size: 30px; font-weight: 850; line-height: 1.1; }
         .quote-currency { font-size: 17px; font-weight: 750; color: #0b6b68; }
@@ -810,7 +810,6 @@
             </div>
 
                 <!-- COLUMNA DERECHA: FORMULARIO -->
-            <form class="lead-form" id="contactForm">  
                 <div class="form-card fade-up">
                     <h3>Solicitar orientación</h3>
                     <p>Completa lo básico y continúa la conversación por WhatsApp.</p>
@@ -834,7 +833,7 @@
 
                             <div class="form-group">
                                 <label for="testType">Tipo de prueba</label>
-                                <select id="testType" name="testType" required onchange="actualizarCotizacion(this.value)">
+                                <select id="testType" name="testType" required>
                                     <option value="">Seleccionar</option>
                                     <option value="ADN Informativo">ADN Informativo o Confidencial</option>
                                     <option value="ADN Legal">ADN Legal</option>
@@ -898,7 +897,7 @@
                         <svg class="icon-sm"><use href="#icon-chevron"></use></svg>
                     </button>
                     <div class="faq-answer">
-                        <p>El ADN Informativo: Es exclusivamente para uso personal y tranquilidad familiar; no se realiza identificación formal ni sirve para trámites en el juzgado.El ADN Legal: Cumple con una estricta cadena de custodia e identificación obligatoria (DNI o pasaporte), por lo que tiene plena validez jurídica para juzgados, trámites de filiación o pensión.</p>
+                        <p>El ADN Informativo busca responder la duda de forma personal entre los involucrados. El ADN Legal permite el uso de identificadores o códigos para proteger la identidad de las partes durante el análisis o la recepción de muestras no habituales.</p>
                     </div>
                 </div>
 
@@ -1071,7 +1070,7 @@
         function setupWhatsAppLinks() {
             const links = document.querySelectorAll('.whatsapp-link');
             const defaultMsg = encodeURIComponent("Hola ADN PATERNIDAD PIURA, me gustaría recibir orientación privada sobre una prueba de ADN.");
-            const url = `https://wa.me/${984089927}?text=${defaultMsg}`;
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${defaultMsg}`;
 
             links.forEach(link => {
                 link.href = url;
@@ -1106,7 +1105,7 @@
                               `*Participantes:* ${participants}\n` +
                               `*Mensaje:* ${comments}`;
 
-                let urlWhatsApp = `https://wa.me/${984089927}?text=${encodeURIComponent(mensaje)}`;
+                let urlWhatsApp = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
 
                 // Deshabilitar botón temporalmente
                 if (submitBtn) {
