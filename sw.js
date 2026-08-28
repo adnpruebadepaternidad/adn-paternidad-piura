@@ -1,4 +1,4 @@
-const CACHE_NAME = 'adn-piura-cache-v8';
+const CACHE_NAME = 'adn-piura-cache-v9';
 const urlsToCache = [
   './',
   './index.html',
